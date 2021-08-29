@@ -15,3 +15,8 @@
 - Solution is extendable (specific values are stored in variables, page is stored as template)
 - Solution is effective enough as it shows time without any processing
 - Code follow flask standards
+
+## Unit testing
+
+- Function of making shift in time according to utc was tested with unit tests
+- Unit test was completed with best practices (tests are automated, all paths were tested, values from different boundaries were used)
