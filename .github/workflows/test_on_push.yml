@@ -4,7 +4,7 @@ on:
     tags:
       - '!refs/tags/*'
     branches:
-      - '**'
+      - '!main'
 jobs:
   run_tests:
     runs-on: [ubuntu-latest]

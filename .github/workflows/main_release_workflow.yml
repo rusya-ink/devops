@@ -3,6 +3,9 @@ name: Publish on Docker Hub
 on:
   release:
     types: [published]
+  push:
+    branch:
+      - 'main'
 
 jobs:
   run_tests:
