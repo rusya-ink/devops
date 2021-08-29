@@ -19,7 +19,7 @@ def hello():
 
 def get_timezone_from_utc(utc):
     if utc > -24 and utc < 24:
-        return datetime.timezone(datetime.timedelta(hours=utc+2))
+        return datetime.timezone(datetime.timedelta(hours=utc))
     else:
         return None
 
