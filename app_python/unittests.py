@@ -9,7 +9,7 @@ class AppTests(unittest.TestCase):
         for test_utc in test_cases:
             result = tested_app.get_timezone_from_utc(test_utc)
             if test_utc >= 24 or test_utc <= -24:
-                self.assertEqual(result, nil)
+                self.assertEqual(result, null)
             else:
                 self.assertEqual(result, datetime.timezone(
                         datetime.timedelta(hours=test_utc)))
