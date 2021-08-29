@@ -1,3 +1,5 @@
+
+import unittest
 import datetime
 import redis
 from flask import Flask, render_template
@@ -9,7 +11,6 @@ TIME_FORMAT = '%H:%M:%S'
 
 # Moscow is in UTC+3 timezone
 MOSCOW_UTC = 3
-
 
 @app.route('/')
 def hello():
