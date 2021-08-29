@@ -1,8 +1,6 @@
 name: test_on_push
 on:
   push:
-    tags:
-      - '!refs/tags/*'
     branches:
       - '*'
 jobs:
