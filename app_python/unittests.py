@@ -5,10 +5,10 @@ import datetime
 class AppTests(unittest.TestCase):
 
     def test_utc(self):
-        test_cases = [-1000, -13, -12, -11, -3, 5, 13, 14, 15, 1000]
+        test_cases = [-1000, -24, -23, -11, -3, 5, 13, 23, 24, 1000]
         for test_utc in test_cases:
             result = tested_app.get_timezone_from_utc(test_utc)
-            if test_utc > 14 or test_utc < -12:
+            if test_utc >= 24 or test_utc <= -24:
                 self.assertEqual(result, nil)
             else:
                 self.assertEqual(result, datetime.timezone(
