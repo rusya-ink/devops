@@ -16,3 +16,5 @@ Guide on setup I found on https://medium.com/@JohnFoderaro/how-to-set-up-a-local
 
 Guide on setup I found on https://devops.com/devops-primer-using-vagrant-with-aws/
 
+I found nonfixable problem with setting up vagrant aws on my host machine with Windows 10, so I completed it on Ubuntu VM.
+
