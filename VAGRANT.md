@@ -6,7 +6,7 @@ Here I found some of the best practices on working with Vagrant
 
 These I used in my project
 - We should overwrite host locale in the way to make guest machine support it
-- Control CPU and Memory using Vagrantfile like 
+- Control CPU and Memory using Vagrantfile
 
 ## Vagrant with virtualbox
 
