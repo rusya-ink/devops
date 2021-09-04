@@ -5,17 +5,14 @@
 VAGRANT_BOX = 'bento/ubuntu-20.04'
 # Memorable name for your
 VM_NAME = 'vagrant-vm'
-# VM User — 'vagrant' by default
-VM_USER = 'vagrant'
-# Username on your Mac
-HOST_USER = 'paras'
 # Host folder to sync
-HOST_PATH = 'C:/Users/' + HOST_USER + '/' + VM_NAME
+HOST_PATH = '../../../ansible'
 # Where to sync to on Guest — 'vagrant' is the default user name
-GUEST_PATH = '/home/' + VM_USER + '/' + VM_NAME
+GUEST_PATH = '/home/ansible'
 # # VM Port — uncomment this to use NAT instead of DHCP
 # VM_PORT = 8080
 Vagrant.configure(2) do |config|
+  
   # Vagrant box from Hashicorp
   config.vm.box = VAGRANT_BOX
   
@@ -32,10 +29,10 @@ Vagrant.configure(2) do |config|
   # Sync folder
   config.vm.synced_folder HOST_PATH, GUEST_PATH
   # Disable default Vagrant folder, use a unique path per project
-  config.vm.synced_folder '.', '/home/'+VM_USER+'', disabled: true
-  # Install docker
-  config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install docker
-  SHELL
+  config.vm.synced_folder '.', '/home/vagrant', disabled: true
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.provisioning_path = '/home/ansible/'
+    ansible.playbook = '/home/ansible/docker-virtualbox.yml'
+  end
 end
