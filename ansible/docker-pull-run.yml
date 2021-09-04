@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - role: docker-pull-run
+      vars:
+          docker_image: "parasyte123/devops_web"
+          ports: 
+            - "5000:5000"

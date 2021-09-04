@@ -1,3 +1,4 @@
+---
 - name: Install aptitude using apt
   apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
@@ -21,3 +22,17 @@
 - name: Install Docker Module for Python
   pip:
     name: docker
+
+- name: Pull Docker image
+  docker_image:
+    name: "{{ docker_image }}"
+    source: pull
+    pull: yes
+
+- name: Start a container
+  become: true
+  docker_container:
+    name: app_python
+    image: "{{ docker_image }}"
+    state: started
+    ports: "{{ ports }}"
