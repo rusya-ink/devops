@@ -4,7 +4,7 @@
 # Box / OS
 VAGRANT_BOX = 'bento/ubuntu-20.04'
 # Memorable name for your
-VM_NAME = 'vagrant-vm'
+VM_NAME = 'vagrant-vm-5'
 # Host folder to sync
 HOST_PATH = '../../../ansible'
 # Where to sync to on Guest — 'vagrant' is the default user name
@@ -33,6 +33,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.provisioning_path = '/home/ansible/'
-    ansible.playbook = '/home/ansible/docker-virtualbox.yml'
+    ansible.playbook = '/home/ansible/docker-pull-run.yml'
   end
 end
