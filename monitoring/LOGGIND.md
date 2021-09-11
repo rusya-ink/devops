@@ -30,6 +30,7 @@ Here is how it looks from cinfiguration tab.
 - A dashboard should tell a story or answer a question. (It should be meaningful to use logs).
 - Dashboards should reduce cognitive load, not add to it. (It should be easy to fing information from logs, find erros or warnings).
 - For fast dashboard creation we should use templates.
+- Add memory limits to log files.
 From https://grafana.com/docs/grafana/latest/best-practices/best-practices-for-creating-dashboards/.
 
 ## Report metrics
@@ -44,3 +45,9 @@ Metrics could be seen in Grafana GUi and on Prometheus site.
 - Metric names should be understandable.
 - Metric names should not be changed often (ideally they should not change at all through the projects.
 From https://prometheus.io/docs/practices/naming/.
+
+## Dashboards
+
+Here is some graphs from dashboards tab of Grafana.
+![Metrics in Prometheus GUi](screenshots/metrics/dashboard1.png)
+![Metrics in Prometheus GUi](screenshots/metrics/dashboard2.png)
