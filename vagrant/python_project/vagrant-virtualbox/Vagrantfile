@@ -4,7 +4,7 @@
 # Box / OS
 VAGRANT_BOX = 'bento/ubuntu-20.04'
 # Memorable name for your
-VM_NAME = 'vagrant-vm-5'
+VM_NAME = 'vagrant-vm-6'
 # Host folder to sync
 HOST_PATH = '../../../ansible'
 # Where to sync to on Guest — 'vagrant' is the default user name
