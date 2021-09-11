@@ -13,7 +13,6 @@ services:
       - '--web.console.libraries=/etc/prometheus/console_libraries'
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--storage.tsdb.retention.time=14d'
-      - '--web.enable-lifecycle'
       - '--storage.tsdb.wal-compression'
       - '--storage.tsdb.max-block-duration=4h'
       - '--storage.tsdb.wal-segment-size=60MB'
@@ -35,8 +34,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
   nodeexporter:
     image: prom/node-exporter:${NODE_EXPORTER_VERSION}
@@ -64,8 +62,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
   cadvisor:
     image: gcr.io/google-containers/cadvisor:${CADVISER_VERSION}
@@ -91,8 +88,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
   web:
     container_name: monitoring.web
@@ -113,7 +109,10 @@ services:
       driver: "json-file"
       options:
         tag: "{{.ImageName}}|{{.Name}}"
-
+    deploy:
+      resources:
+        limits:
+          memory: 100M
 
   grafana:
     build:
@@ -147,8 +146,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
   promtail:
     image: grafana/promtail:${LOKI_VERSION}
@@ -175,8 +173,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
   loki:
     container_name: monitoring.loki
@@ -200,8 +197,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.001'
-          memory: 50M
+          memory: 100M
 
 networks:
   monitoring.network:
