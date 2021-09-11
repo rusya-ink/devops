@@ -40,7 +40,7 @@ Metrics could be seen in Grafana GUi and on Prometheus site.
 
 ## Best practices metrics
 
-- Metrics should be atomic (have signle unit).
+- Metrics should be atomic (have single unit).
 - Metric names should be understandable.
-- Metric names should not be changed often (ideally they should not change at all through the projects0
+- Metric names should not be changed often (ideally they should not change at all through the projects.
 From https://prometheus.io/docs/practices/naming/.
