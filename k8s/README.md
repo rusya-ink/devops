@@ -13,13 +13,13 @@ After making deployment and service configurations, this is output of command ``
 ![Output2](./screenshots/output2.png)
 
 Next I used Helm and that is my dashboard after deploying everything:
-![Workload](./screenshots/workload.png)
+![Workload](./screenshots/workloads.png)
 
 Output of command with helm ```kubectl get pods,svc```:
 ![Output3](./screenshots/output3.png)
 
 This is my-service report of command ```minikube service my-service```:
-![service](./screenshots/my-serivce.png)
+![service](./screenshots/my-service.png)
 
 And this is my python time app working:
 ![App](./screenshots/app_working.png)
