@@ -61,7 +61,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: my-configMap
+            name: my-configmap
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
