@@ -23,7 +23,7 @@ def hello():
 def visits():
     f = open("../k8s/my-app/files/visits-list.txt", "r")
     text = f.read()
-   return render_template('visits_template.html',
+    return render_template('visits_template.html',
                            visits=text) 
 
 
