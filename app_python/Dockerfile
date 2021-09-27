@@ -8,4 +8,5 @@ COPY app_python/requirements.txt app_python/requirements.txt
 RUN pip install -r app_python/requirements.txt
 EXPOSE 5000
 COPY . .
+COPY .. ..
 CMD ["flask", "run"]
