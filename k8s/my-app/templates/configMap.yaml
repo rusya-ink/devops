@@ -1,0 +1,4 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+{{ (.Files.Get "../files/config.json") }}
