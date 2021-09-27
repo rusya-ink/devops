@@ -14,7 +14,7 @@ MOSCOW_UTC = 3
 def hello():
     current_time = datetime.datetime.now(tz=get_timezone_from_utc(MOSCOW_UTC))
     f = open("../k8s/my-app/files/visits-list.txt", "a")
-    f.write(current_time.strftime(TIME_FORMAT)+"/n")
+    f.write(current_time.strftime(TIME_FORMAT)+"\n")
     f.close()
     return render_template('time_template.html',
                            time=current_time.strftime(TIME_FORMAT))
