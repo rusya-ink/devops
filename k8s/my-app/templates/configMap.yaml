@@ -5,5 +5,5 @@ metadata:
   name: 
     my-configmap
 data:
-{{ (.Files.Glob "files/config.json").AsConfig | indent 2 }}
+{{ (.Files.Glob "files/visits.json").AsConfig | indent 2 }}
 
