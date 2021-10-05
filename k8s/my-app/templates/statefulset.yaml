@@ -29,6 +29,15 @@ spec:
       serviceAccountName: {{ include "my-app.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+      - name: install
+        image: busybox
+        command:
+        - wget
+        - "-O"
+        - "/work-dir/index.html"
+        - http://info.cern.ch
+
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -60,10 +69,15 @@ spec:
           - name: config
             mountPath: "/config"
             readOnly: true
+          - name: workdir
+            mountPath: "/work-dir"
       volumes:
         - name: config
           configMap:
             name: my-configmap
+        - name: workdir
+          emptyDir: {}
+    
 
 
       {{- with .Values.nodeSelector }}
